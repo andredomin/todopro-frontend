@@ -1,0 +1,66 @@
+html{
+    background-color: rgba(201, 155, 120, 0.297);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    border-radius: 22px;
+    margin-left: 25vw;
+    width: 45vw;
+    background-color: rgba(174, 117, 74, 0.553);
+}
+
+.todopro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25vh;
+    padding-bottom: 5vh;
+}
+
+h1{
+    color: white;
+}
+
+button{
+    margin-top: 5vh;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    color: rgba(174, 117, 74, 0.553) ;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(174, 117, 74, 0.553);
+    color: white;
+}
+
+input{
+    border: none;
+    border-radius: 22px;
+}
+
+li{
+        list-style: none;
+}
+span{
+    cursor: pointer;
+    font-weight: 900;
+    color: rgba(61, 37, 19, 0.815);
+}
+
+span:hover{
+    color: white;
+
+}
+
+.tasks{
+    color: white;
+    font-weight: bold;
+}
+
+.tasks button{
+    margin-left: 5vw;
+}

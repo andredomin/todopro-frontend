@@ -25,6 +25,7 @@ h1{
 
 button{
     margin-top: 5vh;
+    margin-left: 2vw;
     background-color: white;
     border: none;
     border-radius: 20px;
@@ -63,4 +64,11 @@ span:hover{
 
 .tasks button{
     margin-left: 5vw;
+}
+
+@media (min-width: 310px) {
+    body{
+        width: 100vw;
+        margin-left: 0;
+    }
 }

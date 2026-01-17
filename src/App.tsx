@@ -91,7 +91,7 @@ function App() {
                 >
                   Editar
                 </button>
-                <span style={{textDecoration: "none"}} onClick={() => handleDelete(task.id)}> X </span>
+                <button id="deleteButton" onClick={() => handleDelete(task.id)}> X </button>
               </>
             )}
           </li>

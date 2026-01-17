@@ -46,11 +46,12 @@ input{
 li{
         list-style: none;
 }
-span{
+#deleteButton{
     cursor: pointer;
     
     font-weight: 900;
     color: rgba(61, 37, 19, 0.815);
+    background-color: white;
 }
 
 span:hover{

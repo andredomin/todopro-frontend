@@ -48,6 +48,7 @@ li{
 }
 span{
     cursor: pointer;
+    text-decoration: none !important;
     font-weight: 900;
     color: rgba(61, 37, 19, 0.815);
 }

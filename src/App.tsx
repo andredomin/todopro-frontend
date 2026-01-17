@@ -81,7 +81,7 @@ function App() {
               <>
                 {task.text}
                 <button onClick={() => handleToggle(task.id)}>
-                  {task.completed ? "Descompletar" : "Completar"}
+                  {task.completed ? "¡Completada!" : "Completar"}
                 </button>
                 <button
                   onClick={() => {

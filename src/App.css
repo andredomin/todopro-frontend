@@ -68,6 +68,10 @@ span:hover{
     margin-left: 5vw;
 }
 
+select{
+    margin-left: 5vw;
+}
+
 @media (min-width: 310px) {
     body{
         width: 100vw;

@@ -5,7 +5,7 @@ import api from './api';
 interface Task {
   id: number;
   text: string;
-  completed: boolean;
+  status: "INCOMPLETA" | "EN_PROCESO" | "COMPLETADA";
 }
 
 function App() {
@@ -44,11 +44,6 @@ function App() {
     setEditingText("");
   };
 
-  const handleToggle = async (id: number) => {
-    const res = await api.put<Task>(`/tasks/${id}/toggle`);
-    setTasks(prev => prev.map(t => t.id === id ? res.data : t));
-  };
-
   return (
     <div className="todopro">
       <h1>To-do Pro</h1>
@@ -66,7 +61,7 @@ function App() {
           <li
             className="tasks"
             key={task.id}
-            style={{ textDecoration: task.completed ? "line-through" : "none" }}
+            style={{ textDecoration: task.status === 'COMPLETADA' ? "line-through" : "none", textDecorationColor: task.status === 'COMPLETADA' ? "red" : "none", color: task.status === "EN_PROCESO" ? "orange" : "white" }}
           >
             {editingId === task.id ? (
               <>
@@ -80,9 +75,24 @@ function App() {
             ) : (
               <>
                 {task.text}
-                <button onClick={() => handleToggle(task.id)}>
-                  {task.completed ? "¡Completada!" : "Completar"}
-                </button>
+                <select
+                  value={task.status}
+                  style={{
+                    backgroundColor: task.status === "EN_PROCESO" ? "orange" : task.status === 'COMPLETADA' ? "green" : "white"}}
+
+                  onChange={async (e) => {
+                 const newStatus = e.target.value;
+                const res = await api.patch<Task>(`/tasks/${task.id}/status`, {
+                  status: newStatus
+                });
+                setTasks(prev => prev.map(t => t.id === task.id ? res.data : t));
+  }}
+>
+                <option value="INCOMPLETA">Incompleta</option>
+                <option value="EN_PROCESO">En proceso</option>
+              <option value="COMPLETADA">Completada</option>
+</select>
+
                 <button
                   onClick={() => {
                     setEditingId(task.id);
